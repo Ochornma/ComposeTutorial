@@ -67,10 +67,12 @@ fun project(resources: Resources){
             Spacer(modifier = Modifier.padding(10.dp))
 
             Button(onClick = {}, modifier = Modifier.align(Alignment.CenterHorizontally)) {
-                Text(text = "Order Now")
+                Text(text = "Order Now",
+                style = TextStyle(color = Color.White))
             }
 
         }
+
     }
 }
 
