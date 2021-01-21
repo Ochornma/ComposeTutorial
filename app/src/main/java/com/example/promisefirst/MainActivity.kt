@@ -3,25 +3,19 @@ package com.example.promisefirst
 import android.content.res.Resources
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.ScrollableColumn
-
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.foundation.Text
-import androidx.compose.foundation.background
+import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.Button
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.imageFromResource
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.setContent
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
-import androidx.ui.tooling.preview.Preview
 import com.example.promisefirst.ui.theme.PromiseFirstTheme
 
 class MainActivity : AppCompatActivity() {
@@ -29,7 +23,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             PromiseFirstTheme {
-                body(resources = resources)
+               // body(resources = resources)
+                body2()
             }
 
         }
@@ -43,9 +38,9 @@ class MainActivity : AppCompatActivity() {
 @Composable
 fun body(resources: Resources){
     ScrollableColumn(modifier = Modifier
-            .fillMaxWidth()
-            .fillMaxHeight()
-            .background(color = Color(0XFFF2F2F2))) {
+        .fillMaxWidth()
+        .fillMaxHeight()
+        .background(color = Color(0XFFF2F2F2))) {
         Image(bitmap = imageFromResource(res = resources, resId = R.drawable.happy_meal),
                 modifier = Modifier
                         .height(300.dp)
@@ -65,11 +60,30 @@ fun body(resources: Resources){
     }
 }
 
+//row
+@Composable
+fun body2() {
+    Row(modifier = Modifier
+            .fillMaxWidth()
+            .height(200.dp)
+            .border(border = BorderStroke(width = 1.dp, color = Color.Black)),
+    horizontalArrangement = Arrangement.Center
+    ) {
+        Text(text = "ITEM 1",
+        Modifier.align(Alignment.CenterVertically))
+    }
+}
 
-@Preview(showBackground = true)
+
+@Preview(name = "my preview")
 @Composable
 fun DefaultPreview(){
-    body(resources = Resources.getSystem())
+    PromiseFirstTheme{
+       // body(resources = Resources.getSystem())
+        body2()
+    }
+   // body(resources = Resources.getSystem())
+
 }
 
 
