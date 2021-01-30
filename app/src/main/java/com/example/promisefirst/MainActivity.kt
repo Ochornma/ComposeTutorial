@@ -2,9 +2,9 @@ package com.example.promisefirst
 
 import android.content.res.Resources
 import android.os.Bundle
-import android.text.Layout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.*
+import androidx.compose.material.Text
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
 import androidx.compose.runtime.Composable
@@ -15,6 +15,7 @@ import androidx.compose.ui.graphics.imageFromResource
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.setContent
 import androidx.compose.ui.text.TextStyle
+
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
@@ -53,7 +54,7 @@ fun project(resources: Resources){
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 Text(text = "Happy Meal",
-                    style = TextStyle(fontSize = TextUnit.Companion.Sp(26)))
+                    style = TextStyle(fontSize = TextUnit.Sp(26)))
 
                 Text(text = "$5.99",
                     style = TextStyle(fontSize = TextUnit.Companion.Sp(17),
