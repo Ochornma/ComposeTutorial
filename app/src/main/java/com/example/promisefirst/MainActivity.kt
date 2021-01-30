@@ -24,15 +24,7 @@ import com.example.promisefirst.ui.theme.PromiseFirstTheme
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
-            PromiseFirstTheme {
-                project(resources = resources)
-                //body2()
-            }
-
-        }
-
-
+        setContentView(R.layout.activity_main)
     }
 }
 
